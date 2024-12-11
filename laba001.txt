@@ -1,0 +1,40 @@
+#!/bin/bash
+b=0
+n=0
+i=0
+ar=()
+
+sred() 
+{
+    b=$(($b/$n))
+}
+
+echo "Размер массива"
+read n
+
+echo "Элементы массива"
+while [ $n -gt $i ]
+do
+    read ar[$i]
+    i=$(($i+1))
+done
+
+i=0
+
+echo "Введенный массив"
+while [ $n -gt $i ]
+do
+    echo "${ar[$i]}"
+    i=$(($i+1))
+done
+    
+i=0
+    
+while [ $n -gt $i ]
+do
+    b=$(($b + ${ar[$i]}))
+    i=$(($i + 1))
+done
+
+sred
+echo "Среднее $b" 
